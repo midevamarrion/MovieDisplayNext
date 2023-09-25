@@ -1,6 +1,6 @@
 import { MOVIE_ACCESS_TOKEN, MOVIE_BASE_URL } from "@/app/config";
 
-export async function GET() {
+export async function Slider() {
     if (!MOVIE_BASE_URL) {
         return new Response("Movie base URL not found", {
             status: 404,
@@ -12,7 +12,7 @@ export async function GET() {
         });
     }
     try {
-        const request = await fetch(`${MOVIE_BASE_URL}/3/movie/popular`, {
+        const request = await fetch(`${MOVIE_BASE_URL}/3/discover/movie`, {
             method: 'GET',
             headers: {
                 "Content-Type": "application/json",
@@ -39,13 +39,3 @@ export async function GET() {
         });
     }
 }
-
-
-
-
-
-
-
-
-
-
